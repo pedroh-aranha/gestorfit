@@ -14,6 +14,7 @@ export default function Cadastro() {
   const [dados, setDados] = useState({ nome: "", email: "", senha: "" });
   const [erro, setErro] = useState("");
   const [enviando, setEnviando] = useState(false);
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   const mudar = (event) => {
     const { name, value } = event.target;
@@ -55,17 +56,22 @@ export default function Cadastro() {
         onChange={mudar}
       />
       
-      <Campo
-        rotulo="Senha"
-        id="senha"
-        name="senha"
-        type="password"
-        value={dados.senha}
-        onChange={mudar}
-      />
-      <Botao type="submit" disabled={enviando}>
-        {enviando ? "Criando..." : "Criar conta"}
-      </Botao>
+      <div className={styles.campoSenha}>
+        <Campo
+          rotulo="Senha"
+          id="senha"
+          name="senha"
+          type={mostrarSenha ? "text" : "password"}
+          value={dados.senha}
+          onChange={(e) => setSenha(e.target.value)}/>
+        <button
+          type="button"
+          className={styles.botaoOlho}
+          onClick={() => setMostrarSenha((prev) => !prev)}
+          aria-label={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}>
+          {mostrarSenha ? "Ocultar" : "Mostrar"}
+        </button>
+      </div>
       <p>
         Já tem conta? <Link href="/login">Entrar</Link>
       </p>

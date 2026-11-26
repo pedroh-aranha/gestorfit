@@ -16,6 +16,7 @@ export default function Login() {
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
   const [enviando, setEnviando] = useState(false);
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   const enviar = async (event) => {
     event.preventDefault();
@@ -42,16 +43,22 @@ export default function Login() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <Campo
-        rotulo="Senha"
-        id="senha"
-        type="password"
-        value={senha}
-        onChange={(e) => setSenha(e.target.value)}
-      />
-      <Botao type="submit" disabled={enviando}>
-        {enviando ? "Entrando..." : "Entrar"}
-      </Botao>
+       <div className={styles.campoSenha}>
+        <Campo
+          rotulo="Senha"
+          id="senha"
+          name="senha"
+          type={mostrarSenha ? "text" : "password"}
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}/>
+        <button
+          type="button"
+          className={styles.botaoOlho}
+          onClick={() => setMostrarSenha((prev) => !prev)}
+          aria-label={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}>
+          {mostrarSenha ? "Ocultar" : "Mostrar"}
+        </button>
+        </div>
       <p>
         Não tem conta? <Link href="/cadastro">Cadastre-se</Link>
       </p>

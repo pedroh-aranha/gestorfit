@@ -1,19 +1,21 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import Botao from "@/components/Botao/Botao";
+import Mensagem from "@/components/Mensagem/Mensagem";
 import Link from "next/link";
 import { turmas, modalidades } from "@/dados/exemplo";
 
 export default function DetalheTurma() {
-  const params = useParams();  // pega pelo id
+  const { id } = useParams();  // pega pelo id
 
-  const turma = turmas.find((t) => String(t.id) === String(params.id));
+  const turma = turmas.find((t) => String(t.id) === String(id));
 
   if (!turma) {
     return (
       <div>
         <p>Turma não encontrada.</p>
-        <Link href="/">Voltar para a lista</Link>
+        <Botao><Link href="/">Voltar para a lista</Link></Botao>
       </div>
     );
   }
@@ -30,8 +32,8 @@ export default function DetalheTurma() {
       <p>Vagas: {turma.vagas}</p>
 
       <div style={{ marginTop: "16px", display: "flex", gap: "12px" }}>
-        <Link href={`/turmas/${turma.id}/editar`}>Editar Turma</Link>
-        <Link href="/">Voltar</Link>
+        <Botao><Link href={`/turmas/${turma.id}/editar`}>Editar Turma</Link></Botao>
+        <Botao><Link href="/">Voltar</Link></Botao>
       </div>
     </div>
   );
