@@ -1,0 +1,128 @@
+
+  .turma {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-top: 4px solid #4caf50;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  
+  .turma:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  .turma h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .turma p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .status {
+    align-self: flex-start;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+ /* card com vaga: verde */
+.comVaga {
+    border-top-color: #4caf50;
+  }
+  
+  .comVaga .status {
+    background: #e2f1e3;
+    color: #2e7d32;
+  }
+  
+  /* card sem vaga: vermelho */
+  .semVaga {
+    border-top-color: #e53935;
+  }
+  
+  .semVaga .status {
+    background: #fde3e1;
+    color: #c62828;
+  }
+  
+  @media (min-width: 700px) {
+    .lista {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .lista {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .turma {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-top: 4px solid #4caf50;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  
+  .turma:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  .turma h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .turma p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .status {
+    align-self: flex-start;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+ /* card com vaga: verde */
+.comVaga {
+    border-top-color: #4caf50;
+  }
+  
+  .comVaga .status {
+    background: #e2f1e3;
+    color: #2e7d32;
+  }
+  
+  /* card sem vaga: vermelho */
+  .semVaga {
+    border-top-color: #e53935;
+  }
+  
+  .semVaga .status {
+    background: #fde3e1;
+    color: #c62828;
+  }
